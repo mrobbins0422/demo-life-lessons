@@ -1,0 +1,221 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+img {
+    display: block;
+    max-width: 100%;
+}
+:root {
+    --ff-primary: "Roboto", sans-serif;
+    --ff-secondary: "Roboto", sans-serif;
+    --ff-header: "Merienda", sans-serif;
+
+    --fw-reg: 100;
+    --fw-medium: 300;
+    --fw-bold: 500;
+    --fw-header: 500;
+    --fw-header-bold: 600;
+
+    --clr-dark: #303030;
+    --clr-light: #f5fafa;
+    --clr-accent: blue;
+    --clr-background: antiquewhite;
+    --clr-hover-light: #FFFFCC;
+    --clr-footer: rgba(172, 209, 233, 1);
+
+    --fs-h1: 2.1rem;
+    --fs-h2: 1.8rem;
+    --fs-h3: 1.35rem;
+    --fs-body: 0.9rem;
+    --fs-footer: .8rem;
+}
+@media (min-width: 900px) {
+    :root {
+        --fs-h1: 2.7rem;
+        --fs-h2: 2.2rem;
+        --fs-h3: 1.4rem;
+        --fs-body: 1rem;
+    }
+}
+/*  
+---------------------------------------------------------------------------- */
+html {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+body {
+    height: 100vh;
+    font-family: var(--ff-primary);
+    color: black;
+    background-color: black;
+    line-height: 1.6em;
+    padding: 0;
+    margin: 0;
+}
+/* topograpy 
+---------------------------------------------------------------------------- */
+h1,
+h2,
+h3 {
+    font-family: var(--ff-header);
+/*     font-weight: var(--fw-header); */
+}
+
+ /* grid
+ --------------------------------------------------------------------------  */
+ /* grid layout 
+---------------------------------------------------------------------------- */
+.lesson-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 10vh 7vh repeat(8, auto) 5vh;
+    justify-content: center;
+    align-content: center;
+}
+div.background-wrapper {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 1;
+    grid-row-end: 12;
+}
+img.background-image {
+    width: 100vw;
+    min-height: 100%;
+    object-fit: cover;
+}
+h1.article-title {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+h2.article-lesson-title {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+.article-content {
+    grid-column-start: 4;
+    grid-column-end: 13;
+    grid-row-start: 3;
+    grid-row-end: 12;
+}
+nav.navbar {
+    grid-column-start: 1;
+    grid-column-end: 7;
+    grid-row-start: 11;
+    grid-row-end: 12;
+}
+ /* navbar
+ --------------------------------------------------------------------------  */
+nav.navbar {
+    display: flex;
+    background-color: rgb(0, 128, 0, 0.6);
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    border-radius: 0 2rem 0 0;
+}
+.navbar a {
+    margin: 0 1rem;
+
+}
+a.navbar-link {
+    font-weight: var(--fw-header);
+    color: whitesmoke;
+    text-decoration: none;
+    padding: 0.1rem 0.5rem;
+}
+a.navbar-link:hover {
+    background-color: whitesmoke;
+    color: green;
+    text-decoration: none;
+    border-radius: 0.5rem;
+}
+/* 
+--------------------------------------------------------------------------  */
+h1.article-title {
+    color: green;
+    text-align: center;
+    align-self: center;
+    padding-top: 1.8em;
+} 
+h2.article-lesson-title {
+    color: blue;
+    text-align: center;
+    align-self: center;
+}
+div.article-content {
+    padding-right: 2em;
+}
+div.article-content  p {
+    font-size: clamp(0.9rem, 1.6vw, 1.4rem);
+    max-width: 70ch;
+    line-height: 1.5rem;
+    margin-bottom: 0.5em;
+ }
+p#cap-me::first-letter {
+    color: white;
+    background-color: rgb(95, 163, 95);
+    border-radius: 2px;
+    box-shadow: 3px 3px 0 rgb(143, 143, 155);
+    font-size: 225%;
+    padding: 6px 3px;
+    margin-right: 6px;
+    float: left;
+}
+.left {
+    min-width: 60vw;
+    min-height: 100%;
+    background-color: lightgray;
+    opacity: 0;
+} 
+.left {
+    -webkit-shape-outside: polygon(0 0, 50% 40%, 50% 100%, 0 100%);
+    shape-outside: polygon(0 0, 40% 40%, 40% 100%, 0 100%);
+    float: left;
+    -webkit-clip-path: polygon(0 0, 50% 40%, 50% 100%, 0 100%);
+    clip-path: polygon(0 0, 40% 40%, 40% 100%, 0 100%);
+}  
+
+/* I like to include this as it helps me set breakpoints 
+Extra small (xs) devices (portrait phones, less than 576px)
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+-----
+
+    320px — 480px: Mobile devices
+    481px — 768px: iPads, Tablets
+    769px — 1024px: Small screens, laptops
+    1025px — 1200px: Desktops, large screens
+    1201px and more —  Extra large screens, TV
+*/
+
+
+/* media queries
+---------------------------------------------------------------------------- */
+@media (min-width: 768px) { 
+    nav.navbar {
+        position: relative;
+        left: 0;
+        bottom: 0;
+        flex-direction: row;
+    }
+    
+ }
