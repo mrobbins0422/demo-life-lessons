@@ -2,7 +2,8 @@
 
 An experiment with wrapped text.
 
-![The Fishing Trip](//inc/images/ScreenCapLifeLessons_2022-0302_large.png)
+![The Fishing Trip](/inc/images/ScreenCapLifeLessons_2022-0302_large.png)
+
 
 I have the effect I want but I am not sure how I want to proceed in  
 dealing with different viewports. I'd like to make the design responsive in  
